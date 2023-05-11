@@ -13,7 +13,7 @@ export class TesorosComponent implements OnInit {
   @ViewChild('closeModal') closeModal: ElementRef<HTMLElement>;
 
   frmTesoro = new FormGroup({
-    id: new FormControl(''),
+    id: new FormControl(null),
     titulo: new FormControl('', Validators.required),
     descripcion: new FormControl('', Validators.required),
     pista: new FormControl('', Validators.required),
@@ -46,7 +46,7 @@ export class TesorosComponent implements OnInit {
       alert('Completa toda la información');
     }
 
-    if(this.frmTesoro.value.id){
+    if(!this.frmTesoro.value.id){
       this.agregarTesoro();
     }else{
       this.editarTesoro();
