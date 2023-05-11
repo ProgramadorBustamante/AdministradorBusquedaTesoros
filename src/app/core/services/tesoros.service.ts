@@ -13,13 +13,34 @@ export class TesorosService {
   }
 
   ObtenerTodos(){
+   return this.afs.collection("tesoros").get();
+  }
+
+  async Agregar(data : any ){
+    
+  
+   return await   this.afs.collection("tesoros").add({...data}).then(c=>{
+    return true;
+   }).catch(err=> err)
 
   }
 
-  Agregar(data : any ){
+  async editar(data : any , id : any  ){
+    
   
-    this.afs.collection("tesoros").add({...data})
+    return await   this.afs.collection("tesoros").doc(id).set({...data}).then(c=>{
+     return true;
+    }).catch(err=> err)
+ 
+   }
 
+  async Eliminar(id : any ){
+   return await  this.afs.collection("tesoros").doc(id).delete().then(c=>{
+      return true;
+     })
+     .catch(err=> {
+      return err
+     })
   }
 
 

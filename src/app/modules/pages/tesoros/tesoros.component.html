@@ -8,7 +8,7 @@
             <div
               class="border-bottom title-part-padding d-flex justify-content-between"
             >
-              <h4 class="card-title mb-0">Kitchen Sink</h4>
+              <h4 class="card-title mb-0">Administrador de tesoros</h4>
               <div class="buttons">
                 <!-- Button trigger modal -->
                 <button
@@ -23,160 +23,38 @@
             </div>
             <div class="card-body">
               <h5 class="card-subtitle mb-3">
-                Swipe Mode, ModeSwitch, Minimap, Sortable, SortableSwitch
+                Listados de tesoros
               </h5>
-              <table
-                class="tablesaw table-bordered table-hover table no-wrap"
-                data-tablesaw-mode="swipe"
-                data-tablesaw-sortable
-                data-tablesaw-sortable-switch
-                data-tablesaw-minimap
-                data-tablesaw-mode-switch
-              >
+              <table class="table table-striper" >
                 <thead>
                   <tr>
-                    <th
-                      scope="col"
-                      data-tablesaw-sortable-col
-                      data-tablesaw-priority="persist"
-                      class="border"
-                    >
-                      Movie Title
-                    </th>
-                    <th
-                      scope="col"
-                      data-tablesaw-sortable-col
-                      data-tablesaw-sortable-default-col
-                      data-tablesaw-priority="3"
-                      class="border"
-                    >
-                      Rank
-                    </th>
-                    <th
-                      scope="col"
-                      data-tablesaw-sortable-col
-                      data-tablesaw-priority="2"
-                      class="border"
-                    >
-                      Year
-                    </th>
-                    <th
-                      scope="col"
-                      data-tablesaw-sortable-col
-                      data-tablesaw-priority="1"
-                      class="border"
-                    >
-                      <abbr title="Rotten Tomato Rating">Rating</abbr>
-                    </th>
-                    <th
-                      scope="col"
-                      data-tablesaw-sortable-col
-                      data-tablesaw-priority="4"
-                      class="border"
-                    >
-                      Gross
-                    </th>
+                    <td class=""> Nombre </td>
+                    <td class=""> acertijo </td>
+                    <td class=""> Puntos Tesoro </td>
+                    <td class=""> minPuntos </td>
+                    <td class="">  </td>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td class="title">
-                      <a class="link" href="javascript:void(0)">Avatar</a>
+                  <tr *ngFor="let item of tesoros">
+                    <td>
+                        {{item.data.titulo}}
+                    </td>  
+                    <td>
+                        {{item.data.acertijo}}
                     </td>
-                    <td>1</td>
-                    <td>2009</td>
-                    <td>83%</td>
-                    <td>$2.7B</td>
-                  </tr>
-                  <tr>
-                    <td class="title">
-                      <a class="link" href="javascript:void(0)">Titanic</a>
+                    <td>
+                        {{item.data.puntos}}
                     </td>
-                    <td>2</td>
-                    <td>1997</td>
-                    <td>88%</td>
-                    <td>$2.1B</td>
-                  </tr>
-                  <tr>
-                    <td class="title">
-                      <a class="link" href="javascript:void(0)">The Avengers</a>
+                    <td>
+                        {{item.data.minPuntos}}
                     </td>
-                    <td>3</td>
-                    <td>2012</td>
-                    <td>92%</td>
-                    <td>$1.5B</td>
-                  </tr>
-                  <tr>
-                    <td class="title">
-                      <a class="link" href="javascript:void(0)"
-                        >Harry Potter and the Deathly Hallows—Part 2</a
-                      >
+                    <td>
+                        <button class="btn btn-danger" (click)="eliminarTesoro(item)">Eliminar</button>
+                        <button class="btn btn-danger" (click)="editar(item)" data-toggle="modal"
+                        data-target="#modTesoro">Editar</button>
                     </td>
-                    <td>4</td>
-                    <td>2011</td>
-                    <td>96%</td>
-                    <td>$1.3B</td>
-                  </tr>
-                  <tr>
-                    <td class="title">
-                      <a class="link" href="javascript:void(0)">Frozen</a>
-                    </td>
-                    <td>5</td>
-                    <td>2013</td>
-                    <td>89%</td>
-                    <td>$1.2B</td>
-                  </tr>
-                  <tr>
-                    <td class="title">
-                      <a class="link" href="javascript:void(0)">Iron Man 3</a>
-                    </td>
-                    <td>6</td>
-                    <td>2013</td>
-                    <td>78%</td>
-                    <td>$1.2B</td>
-                  </tr>
-                  <tr>
-                    <td class="title">
-                      <a class="link" href="javascript:void(0)"
-                        >Transformers: Dark of the Moon</a
-                      >
-                    </td>
-                    <td>7</td>
-                    <td>2011</td>
-                    <td>36%</td>
-                    <td>$1.1B</td>
-                  </tr>
-                  <tr>
-                    <td class="title">
-                      <a class="link" href="javascript:void(0)"
-                        >The Lord of the Rings: The Return of the King</a
-                      >
-                    </td>
-                    <td>8</td>
-                    <td>2003</td>
-                    <td>95%</td>
-                    <td>$1.1B</td>
-                  </tr>
-                  <tr>
-                    <td class="title">
-                      <a class="link" href="javascript:void(0)">Skyfall</a>
-                    </td>
-                    <td>9</td>
-                    <td>2012</td>
-                    <td>92%</td>
-                    <td>$1.1B</td>
-                  </tr>
-                  <tr>
-                    <td class="title">
-                      <a class="link" href="javascript:void(0)"
-                        >Transformers: Age of Extinction</a
-                      >
-                    </td>
-                    <td>10</td>
-                    <td>2014</td>
-                    <td>18%</td>
-                    <td>$1.0B</td>
-                  </tr>
+                    </tr>
                 </tbody>
               </table>
             </div>
@@ -250,31 +128,31 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Ubicacion lat</label>
-                <input formControlName="lat" class="form-control" />
+                <input formControlName="lat"  type="number" class="form-control" />
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label>Ubicacion Long</label>
-                <input formControlName="long" class="form-control" />
+                <input formControlName="long"  type="number" class="form-control" />
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label>Puntos Tesoro</label>
-                <input formControlName="puntos" class="form-control" />
+                <input formControlName="puntos"  type="number" class="form-control" />
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label>Minimo de puntos</label>
-                <input formControlName="minPuntos" class="form-control" />
+                <input formControlName="minPuntos" type="number" class="form-control" />
               </div>
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" #closeModal>
             Cancelar
           </button>
           <button type="submit" class="btn btn-primary">Guardar</button>
