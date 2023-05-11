@@ -12,9 +12,9 @@
             class="has-arrow waves-effect waves-dark"
             href="#"
             aria-expanded="false"
-            ><img [src]="usuario.imagenUrl" alt="user" /><span
+            ><img src="/assets/images/users/6.jpg" alt="user" /><span
               class="hide-menu"
-              >{{usuario.nombre}}
+              >{{usuario.displayName}}
             </span></a
           >
           <ul aria-expanded="false" class="collapse">
@@ -26,27 +26,23 @@
           </ul>
         </li>
         <li class="nav-devider"></li>
-        <li class="nav-small-cap">PERSONAL</li>
-        <li *ngFor="let item of menuItems">
-          <a
-            class="has-arrow waves-effect waves-dark"
-            href="#"
-            aria-expanded="false"
-            ><i class="{{item.icon}}"></i
-            ><span class="hide-menu"
-              >{{item.titulo}}
-              <span class="label label-rouded label-themecolor pull-right"
-                >{{item.submenu.length}}</span
-              ></span
-            ></a
-          >
-          <ul aria-expanded="false" class="collapse">
-            <li *ngFor="let subMenuItem of item.submenu">
-              <a routerLink="{{subMenuItem.url}}"
-                 routerLinkActive="active"
-                [routerLinkActiveOptions]="{exact:true}">{{subMenuItem.titulo}} </a>
-            </li>
-          </ul>
+        <li class="nav-small-cap">Administracion</li>
+        <li >
+          <a routerLink="/main/usuarios"
+             routerLinkActive="active"
+            >Usuarios</a>
+        </li>
+
+        <li >
+          <a routerLink="/main/jugadores"
+             routerLinkActive="active"
+            >Jugadores</a>
+        </li>
+
+        <li>
+          <a routerLink="/main/tesoros"
+             routerLinkActive="active"
+            >Tesoros</a>
         </li>
       </ul>
     </nav>

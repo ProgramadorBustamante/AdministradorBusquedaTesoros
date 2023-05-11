@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { UsuarioService } from '../../services/usuario.service';
-import { Usuario } from '../../models/usuario.model';
+import { UsuarioService } from '../../core/services/usuario.service';
+import { Usuario } from '../../core/models/usuario.model';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-header',
@@ -10,11 +11,15 @@ import { Usuario } from '../../models/usuario.model';
 })
 export class HeaderComponent {
 
-  public usuario!: Usuario;
+  public usuario!: any;
 
-  constructor(private usuarioService: UsuarioService){
-
-    this.usuario = usuarioService.usuario;
+  constructor(private usuarioService: UsuarioService,private afa : AngularFireAuth){
+    this.afa.authState.subscribe(c=> {
+      this.usuario = {
+         nombre: c?.displayName || "",
+         email: c?.email || ""
+      } 
+    })
   }
 
   logout(){

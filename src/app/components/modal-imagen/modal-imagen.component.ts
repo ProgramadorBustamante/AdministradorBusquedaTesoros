@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FileUploadService } from 'src/app/services/file-upload.service';
-import { ModalImagenService } from 'src/app/services/modal-imagen.service';
+import { FileUploadService } from 'src/app/core/services/file-upload.service';
+import { ModalImagenService } from 'src/app/core/services/modal-imagen.service';
 import Swal from 'sweetalert2';
 
 @Component({

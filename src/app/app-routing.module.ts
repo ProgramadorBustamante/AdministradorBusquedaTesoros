@@ -1,15 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthRoutingModule } from './auth/auth.routing';
-import { NopagefoundComponent } from './nopagefound/nopagefound.component';
-import { PagesRoutingModule } from './pages/pages.routing';
+// import { AuthRoutingModule } from './auth/auth.routing';
+import { NopagefoundComponent } from './modules/nopagefound/nopagefound.component';
+import { AuthRoutingModule } from './modules/auth/auth.routing';
+import { PagesRoutingModule } from './modules/pages/pages.routing';
 
 const routes: Routes = [
-
-  // path: '/dashboard' PagesRouting
-  // path: '/auth' AuthRouting
-
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: 'main/dashboard', pathMatch: 'full' },
   { path: '**', component: NopagefoundComponent },
 ];
 
