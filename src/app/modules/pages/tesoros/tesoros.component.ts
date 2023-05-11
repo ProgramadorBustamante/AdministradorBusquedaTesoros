@@ -46,7 +46,7 @@ export class TesorosComponent implements OnInit {
       alert('Completa toda la información');
     }
 
-    if(this.frmTesoro.value.id == "" ){
+    if(this.frmTesoro.value.id){
       this.agregarTesoro();
     }else{
       this.editarTesoro();
