@@ -21,6 +21,7 @@ export class TesorosComponent implements OnInit {
     respuestaAcertijo: new FormControl('', Validators.required),
     lat: new FormControl('', Validators.required),
     long: new FormControl('', Validators.required),
+    urlImagen: new FormControl('', Validators.required),
     puntos: new FormControl('', Validators.required),
     minPuntos: new FormControl('', [Validators.required]),
   });
