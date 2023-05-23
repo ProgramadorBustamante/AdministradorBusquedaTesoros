@@ -24,6 +24,7 @@ export class TesorosComponent implements OnInit {
     urlImagen: new FormControl('', Validators.required),
     puntos: new FormControl('', Validators.required),
     minPuntos: new FormControl('', [Validators.required]),
+    sabiasque: new FormControl('', [Validators.required]),
   });
   tesoros: any[] = [];
 

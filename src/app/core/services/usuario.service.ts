@@ -118,7 +118,7 @@ export class UsuarioService {
       this.usuario =  result.user
         this.afAuth.authState.subscribe((user) => {
           if (user) {
-            this.router.navigate(['dashboard']);
+            this.router.navigate(['main','dashboard']);
           }
         });
         return true;

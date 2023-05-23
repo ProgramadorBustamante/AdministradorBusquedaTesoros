@@ -26,8 +26,6 @@ export class TesorosService {
   }
 
   async editar(data : any , id : any  ){
-    
-  
     return await   this.afs.collection("tesoros").doc(id).set({...data}).then(c=>{
      return true;
     }).catch(err=> err)
@@ -43,6 +41,11 @@ export class TesorosService {
      })
   }
 
+  getranking(){
+    return this.afs.collection('Historial').ref.orderBy("puntos", "desc").get().then(c=>c);
+  }
 
-
+  getUsers(){
+    return this.afs.collection('jugadores').get();
+  }
 }
