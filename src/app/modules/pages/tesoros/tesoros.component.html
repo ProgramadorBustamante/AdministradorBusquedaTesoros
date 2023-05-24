@@ -8,7 +8,7 @@
             <div
               class="border-bottom title-part-padding d-flex justify-content-between"
             >
-              <h4 class="card-title mb-0">Administrador de tesoros</h4>
+              <h4 class="card-title mb-0">Gestión de tesoros</h4>
               <div class="buttons">
                 <!-- Button trigger modal -->
                 <button
@@ -29,9 +29,9 @@
                 <thead>
                   <tr>
                     <td class=""> Nombre </td>
-                    <td class=""> acertijo </td>
+                    <td class=""> Desafio </td>
                     <td class=""> Puntos Tesoro </td>
-                    <td class=""> minPuntos </td>
+                    <td class=""> Min Puntos </td>
                     <td class="">  </td>
                   </tr>
                 </thead>
@@ -80,7 +80,7 @@
       <form [formGroup]="frmTesoro" (submit)="Guardar()">
         <div class="modal-header">
           <div style="display: flex; justify-content: space-between">
-            <h5 class="modal-title" id="modTesoroLabel">Datos del tesoro</h5>
+            <h5 class="modal-title" id="modTesoroLabel">Datos del Tesoro</h5>
             <button
               type="button"
               class="close"
@@ -102,7 +102,7 @@
             </div>
            <div class="col-md-6">
               <div class="form-group">
-                <label>urlImagen</label>
+                <label>Url Imagen</label>
                 <input formControlName="urlImagen" class="form-control" />
               </div>
             </div>
@@ -135,13 +135,13 @@
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label>Ubicacion lat</label>
+                <label>Ubicación lat</label>
                 <input formControlName="lat"  type="number" class="form-control" />
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label>Ubicacion Long</label>
+                <label>Ubicación Long</label>
                 <input formControlName="long"  type="number" class="form-control" />
               </div>
             </div>
@@ -153,13 +153,13 @@
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label>Minimo de puntos</label>
+                <label>Mínimo de puntos</label>
                 <input formControlName="minPuntos" type="number" class="form-control" />
               </div>
             </div>
             <div class="col-md-12">
               <div class="form-group">
-                <label>¿Sabias Que?</label>
+                <label>¿Sabías Que?</label>
                 <textarea formControlName="sabiasque"  class="form-control" ></textarea>
               </div>
             </div>
