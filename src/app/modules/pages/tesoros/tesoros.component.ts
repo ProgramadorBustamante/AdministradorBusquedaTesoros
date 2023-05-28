@@ -45,7 +45,7 @@ export class TesorosComponent implements OnInit {
 
   Guardar() {
     if (this.frmTesoro.invalid) {
-      alert('Completa toda la información');
+      alert('Completa toda la información por favor.');
     }
 
     if(!this.frmTesoro.value.id){
@@ -67,11 +67,11 @@ export class TesorosComponent implements OnInit {
         this.obtenerTesoros();
         this.frmTesoro.reset();
       } else {
-        alert('Ocurrio un error al almacenar');
+        alert('Ocurrio un error al guardar tesoro :(');
       }
     })
     .catch((err) => {
-      alert('Lo sentimos no se pudo procesar la petición');
+      alert('Lo sentimos no se pudo procesar la petición :(');
     });
   }
   editarTesoro( ){
@@ -79,21 +79,19 @@ export class TesorosComponent implements OnInit {
     .editar(this.frmTesoro.value,this.frmTesoro.value.id)
     .then((res) => {
       if (res === true) {
-        alert('Se guardo con exito');
+        alert('Se guardo con exito!');
         this.closeModal.nativeElement.click();
         this.obtenerTesoros();
         this.frmTesoro.reset();
       } else {
-        alert('Ocurrio un error al almacenar');
+        alert('Ocurrio un error al almacenar :(');
+        this.frmTesoro.reset();
       }
     })
     .catch((err) => {
-      alert('Lo sentimos no se pudo procesar la petición');
+      alert('Lo sentimos no se pudo procesar la petición :(');
     });
   }
-
-
-
 
   obtenerTesoros(){
     this.tesoros = [];
@@ -105,16 +103,16 @@ export class TesorosComponent implements OnInit {
   }
 
   eliminarTesoro(tesoro : any ){
-   let  confirm = window.confirm("Estas seguro que deseas eliminar el tesoro");
+   let  confirm = window.confirm("¿Estas seguro que deseas eliminar el tesoro?");
    if(confirm){
     this.tesorosServ.Eliminar(tesoro.id).then((c :  any )=>{
       console.log(c);
       if(c === true){
-        alert("Se elimino correctamente")
+        alert("El tesoro se elimino correctamente!")
         this.obtenerTesoros();
       }
         else{
-          alert("Ocurrio un error")
+          alert("Ocurrio un error :(")
         }
     })
    } 
