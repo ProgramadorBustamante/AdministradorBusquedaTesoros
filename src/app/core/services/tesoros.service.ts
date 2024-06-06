@@ -17,8 +17,6 @@ export class TesorosService {
   }
 
   async Agregar(data : any ){
-    
-  
    return await   this.afs.collection("tesoros").add({...data}).then(c=>{
     return true;
    }).catch(err=> err)

@@ -5,18 +5,11 @@
         <div class="col-12">
           <!-- Column -->
           <div class="card">
-            <div
-              class="border-bottom title-part-padding d-flex justify-content-between"
-            >
+            <div class="border-bottom title-part-padding d-flex justify-content-between">
               <h4 class="card-title mb-0">Gestión de tesoros</h4>
               <div class="buttons">
                 <!-- Button trigger modal -->
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  data-toggle="modal"
-                  data-target="#modTesoro"
-                >
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modTesoro">
                   Agregar Tesoro
                 </button>
               </div>
@@ -25,7 +18,7 @@
               <h5 class="card-subtitle mb-3">
                 Listados de tesoros
               </h5>
-              <table class="table table-striper" >
+              <table class="table table-striper">
                 <thead>
                   <tr>
                     <td class=""> Nombre </td>
@@ -38,24 +31,25 @@
                 <tbody>
                   <tr *ngFor="let item of tesoros">
                     <td>
-                        {{item.data.titulo}}
-                    </td>  
-                    <td>
-                        {{item.data.acertijo}}
+                      {{item.data.titulo}}
                     </td>
                     <td>
-                        {{item.data.puntos}}
+                      {{item.data.acertijo}}
                     </td>
                     <td>
-                        {{item.data.minPuntos}}
+                      {{item.data.puntos}}
                     </td>
                     <td>
-                        <button class="btn btn-danger" (click)="eliminarTesoro(item)"><span class="mdi mdi-delete"></span></button>
-                        <button class="btn btn-warning" (click)="editar(item)" data-toggle="modal"
+                      {{item.data.minPuntos}}
+                    </td>
+                    <td>
+                      <button class="btn btn-danger" (click)="eliminarTesoro(item)"><span
+                          class="mdi mdi-delete"></span></button>
+                      <button class="btn btn-warning" (click)="editar(item)" data-toggle="modal"
                         data-target="#modTesoro">
                         <span class="mdi mdi-pen"></span></button>
                     </td>
-                    </tr>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -67,27 +61,14 @@
 </div>
 
 <!-- Modal -->
-<div
-  class="modal fade"
-  id="modTesoro"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="modTesoroLabel"
-  aria-hidden="true"
-  >
+<div class="modal fade" id="modTesoro" tabindex="-1" role="dialog" aria-labelledby="modTesoroLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <form [formGroup]="frmTesoro" (submit)="Guardar()">
         <div class="modal-header">
           <div style="display: flex; justify-content: space-between">
             <h5 class="modal-title" id="modTesoroLabel">Datos del Tesoro</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-              #closeModal
-            >
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" #closeModal>
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -100,13 +81,13 @@
                 <input formControlName="titulo" class="form-control" />
               </div>
             </div>
-           <div class="col-md-6">
+            <div class="col-md-6">
               <div class="form-group">
                 <label>Url Imagen</label>
                 <input formControlName="urlImagen" class="form-control" />
               </div>
             </div>
-             <div class="col-md-6">
+            <div class="col-md-6">
               <div class="form-group">
                 <label>Descripción</label>
                 <input formControlName="descripcion" class="form-control" />
@@ -127,28 +108,25 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Respuesta Acertijo</label>
-                <input
-                  formControlName="respuestaAcertijo"
-                  class="form-control"
-                />
+                <input formControlName="respuestaAcertijo" class="form-control" />
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label>Ubicación lat</label>
-                <input formControlName="lat"  type="number" class="form-control" />
+                <input formControlName="lat" type="number" class="form-control" />
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label>Ubicación Long</label>
-                <input formControlName="long"  type="number" class="form-control" />
+                <input formControlName="long" type="number" class="form-control" />
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label>Puntos Tesoro</label>
-                <input formControlName="puntos"  type="number" class="form-control" />
+                <input formControlName="puntos" type="number" class="form-control" />
               </div>
             </div>
             <div class="col-md-6">
@@ -160,7 +138,7 @@
             <div class="col-md-12">
               <div class="form-group">
                 <label>¿Sabías Que?</label>
-                <textarea formControlName="sabiasque"  class="form-control" ></textarea>
+                <textarea formControlName="sabiasque" class="form-control"></textarea>
               </div>
             </div>
           </div>

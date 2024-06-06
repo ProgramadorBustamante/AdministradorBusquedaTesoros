@@ -11,6 +11,7 @@ export class TesorosComponent implements OnInit {
   show: boolean = false;
 
   @ViewChild('closeModal') closeModal: ElementRef<HTMLElement>;
+  
 
   frmTesoro = new FormGroup({
     id: new FormControl(null),
@@ -53,7 +54,6 @@ export class TesorosComponent implements OnInit {
     }else{
       this.editarTesoro();
     }
-
   
   }
 
